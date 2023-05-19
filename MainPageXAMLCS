@@ -1,0 +1,108 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
+
+namespace FinalProject
+{
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+
+        }
+
+        bool uppercase = false;
+
+        private void Letter(object sender, EventArgs e)
+        {
+            Button letter = (Button)sender;
+            if (uppercase == true)
+            {
+                eventEntry.Text += letter.Text.ToUpper();
+            }
+            else
+            {
+                eventEntry.Text += letter.Text.ToLower();
+            }
+        }
+
+        private void Uppercase(object sender, EventArgs e)
+        {
+            if (uppercase == true)
+            {
+                uppercase = false;
+            }
+            else
+            {
+                uppercase = true;
+            }
+        }
+
+        private void Delete(object sender, EventArgs e)
+        {
+            if (eventEntry.Text.Length > 0)
+            {
+                eventEntry.Text = eventEntry.Text.Substring(0, eventEntry.Text.Length - 1);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private async void Preferences(object sender, EventArgs e)
+        {
+            Preferences contactPage = new Preferences();
+            await Navigation.PushModalAsync(contactPage);
+        }
+
+        private void Record(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void Events(object sender, EventArgs e)
+        {
+            Events eventsPage = new Events();
+            await Navigation.PushModalAsync(eventsPage);
+        }
+
+        private void Space(object sender, EventArgs e)
+        {
+            eventEntry.Text += " ";
+        }
+
+        private void Add(object sender, EventArgs e)
+        {
+            if (eventEntry.Text.Length > 0)
+            {
+                if (eventPicker.Items.Contains(eventEntry.Text))
+                {
+                    DisplayAlert("Error", "Event Exists", "Ok");
+                }
+                else
+                {
+                    eventPicker.Items.Add(eventEntry.Text);
+                    eventEntry.Text = "";
+                }
+            }
+            else
+            {
+                DisplayAlert("Error", "Enter an event", "Ok");
+            }
+        }
+
+        private void Clear(object sender, EventArgs e)
+        {
+            if (eventEntry.Text.Length > 0)
+            {
+                //
+            }
+        }
+    }
+}
