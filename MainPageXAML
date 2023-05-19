@@ -1,0 +1,82 @@
+<StackLayout>
+        <StackLayout>
+            <Picker x:Name="eventPicker" Title="Events"/>
+        </StackLayout>
+        <StackLayout>
+            <Entry x:Name="eventEntry" Placeholder="Enter event"/>
+        </StackLayout>
+        <StackLayout>
+            <Button x:Name="eventAdder" Clicked="Add" Text="Add"/>
+        </StackLayout>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="0">
+                <Button Text="a" Clicked="Letter" Grid.Column="0"/>
+                <Button Text="s" Clicked="Letter" Grid.Column="1"/>
+                <Button Text="d" Clicked="Letter" Grid.Column="2"/>
+                <Button Text="f" Clicked="Letter" Grid.Column="3"/>
+                <Button Text="g" Clicked="Letter" Grid.Column="4"/>
+                <Button Text="h" Clicked="Letter" Grid.Column="5"/>
+                <Button Text="j" Clicked="Letter" Grid.Column="6"/>
+                <Button Text="k" Clicked="Letter" Grid.Column="7"/>
+                <Button Text="l" Clicked="Letter" Grid.Column="8"/>
+                <Button Text="Clear" Clicked="Space" Grid.Column="9"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Button Text="a" Clicked="Letter" Grid.Column="0"/>
+                <Button Text="s" Clicked="Letter" Grid.Column="1"/>
+                <Button Text="d" Clicked="Letter" Grid.Column="2"/>
+                <Button Text="f" Clicked="Letter" Grid.Column="3"/>
+                <Button Text="g" Clicked="Letter" Grid.Column="4"/>
+                <Button Text="h" Clicked="Letter" Grid.Column="5"/>
+                <Button Text="j" Clicked="Letter" Grid.Column="6"/>
+                <Button Text="k" Clicked="Letter" Grid.Column="7"/>
+                <Button Text="l" Clicked="Letter" Grid.Column="8"/>
+                <Button Text="Space" Clicked="Space" Grid.Column="9"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button Text="Uppercase" Clicked="Uppercase" Grid.Column="0"/>
+                <Button Text="w" Clicked="Letter" Grid.Column="1"/>
+                <Button Text="e" Clicked="Letter" Grid.Column="2"/>
+                <Button Text="r" Clicked="Letter" Grid.Column="3"/>
+                <Button Text="t" Clicked="Letter" Grid.Column="4"/>
+                <Button Text="y" Clicked="Letter" Grid.Column="5"/>
+                <Button Text="u" Clicked="Letter" Grid.Column="6"/>
+                <Button Text="i" Clicked="Letter" Grid.Column="7"/>
+                <Button Text="o" Clicked="Letter" Grid.Column="8"/>
+                <Button Text="Delete" Clicked="Delete" Grid.Column="9"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="0">
+                <Button Text="Events" Clicked="Events" Grid.Column="0"/>
+                <Button Text="Record" Clicked="Record" Grid.Column="1"/>
+                <Button Text="Preferences" Clicked="Preferences" Grid.Column="2"/>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
