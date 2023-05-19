@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Preferences">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Picker x:Name="colourPicker" Title="Colour">
+                    <Picker.Items>
+                        <x:String>Blue</x:String>
+                        <x:String>Green</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label x:Name="backgroundLabel" Text="Background"/>
+                    <Switch x:Name="backgroundSwitch" Toggled="ApplyBackgroundColour"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <StackLayout Orientation="Horizontal">
+                    <Grid Grid.Column="0">
+                        <Label Text="Label" x:Name="label" Grid.Row="0"/>
+                        <Label Text="Switch" x:Name="switchLabel" Grid.Row="1"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Switch x:Name="labelSwitch" Grid.Row="0"/>
+                        <Switch x:Name="switchSwitch" Grid.Row="1"/>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <Picker x:Name="fontPicker" Title="Font Size">
+                    <Picker.Items>
+                        <x:String>11</x:String>
+                        <x:String>12</x:String>
+                        <x:String>13</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Themes" x:Name="themeLabel"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lightLabel"/>
+                <Switch x:Name="lightSwitch"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="darkLabel"/>
+                <Switch x:Name="darkSwitch"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Back" Clicked="Back"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
