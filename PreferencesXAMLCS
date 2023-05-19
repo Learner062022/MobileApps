@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace FinalProject
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Preferences : ContentPage
+    {
+
+        public Preferences()
+        {
+            InitializeComponent();
+        }
+
+        private async void Back(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
+
+        private void ApplyBackgroundColour(object sender, ToggledEventArgs e)
+        {
+            if (colourPicker.SelectedItem != null)
+            {
+                if (labelSwitch.IsToggled)
+                {
+                    backgroundLabel.BackgroundColor = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                    label.BackgroundColor = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                    themeLabel.Background = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                    lightLabel.BackgroundColor = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                    darkLabel.BackgroundColor = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                }
+                else if (switchSwitch.IsToggled)
+                {
+                    backgroundSwitch.BackgroundColor = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                    labelSwitch.BackgroundColor = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                    switchSwitch.BackgroundColor = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                    lightSwitch.BackgroundColor = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                    darkSwitch.BackgroundColor = (Xamarin.Forms.Color)colourPicker.SelectedItem;
+                }
+            }
+        }
+    }
+}
